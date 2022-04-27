@@ -16,9 +16,14 @@ COLOR_RESET  = $(shell tput -Txterm sgr0)
 # Flags
 VERSION  := $(shell cat version)
 COMMIT   := $(shell git log -1 --format='%H')
+LD_FLAGS  = \
+	-X okp4/template-go/internal/version.Name=$(BINARY_NAME) \
+	-X okp4/template-go/internal/version.Version=$(VERSION)  \
+	-X okp4/template-go/internal/version.Commit=$(COMMIT)
+BUILD_FLAGS := -ldflags '$(LD_FLAGS)'
 
 # Commands
-GO_BUiLD := CGO_ENABLED=0 go build
+GO_BUiLD := CGO_ENABLED=0 go build $(BUILD_FLAGS)
 
 # Environments
 ENVIRONMENTS = \
@@ -67,7 +72,7 @@ $(ENVIRONMENTS_TARGETS):
 ## Install:
 install: ## Install executable
 	@echo "${COLOR_CYAN} 🚚 Installing project ${BINARY_NAME}${COLOR_RESET}"
-	@go install ${CMD_ROOT}
+	@go install $(BUILD_FLAGS) ${CMD_ROOT}
 
 ## Test:
 test: test-go ## Pass all the tests
