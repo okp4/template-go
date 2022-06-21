@@ -3,7 +3,7 @@ module okp4/template-go
 go 1.18
 
 require (
-	github.com/spf13/cobra v1.4.0
+	github.com/spf13/cobra v1.5.0
 	gopkg.in/yaml.v2 v2.4.0
 )
 
