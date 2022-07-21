@@ -1,24 +1,26 @@
-name: Publish
+name: PR Publish
 
 on:
-  push:
-    branches: [ main ]
-    tags: [ "v*" ]
-
-concurrency:
-  group: publish-${{ github.ref }}
-  cancel-in-progress: true
+  issue_comment:
+    types: [created, edited]
 
 jobs:
   publish-docker-images:
+    if: ${{ github.event.issue.pull_request && github.event.comment.body  == '/publish' }}
     runs-on: ubuntu-20.04
     steps:
+      - uses: xt0rted/pull-request-comment-branch@v1
+        id: comment-branch
+
       - name: Check out repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
 
-      - name: Set up context
-        id: project_context
-        uses: FranzDiebold/github-env-vars-action@v2.5.0
+      - uses: gacts/github-slug@v1
+        id: slug
+        with:
+          to-slug: ${{ steps.comment-branch.outputs.head_ref }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: docker_metadata
@@ -26,14 +28,11 @@ jobs:
         with:
           images: ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,value=nightly
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
+            type=raw,value=${{ steps.slug.outputs.slug }}
           labels: |
             org.opencontainers.image.vendor=OKP4
 
-      - name: Login to Docker registry
+      - name: Login to GHCR
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
