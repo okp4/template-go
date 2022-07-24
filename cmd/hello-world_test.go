@@ -2,13 +2,15 @@ package cmd
 
 import (
 	"testing"
+
+	. "github.com/smartystreets/goconvey/convey"
 )
 
 func TestPrintHelloWorld(t *testing.T) {
-	expected := "Hello world!"
-
-	result := getWelcomeMessage()
-	if result != expected {
-		t.Errorf("Expected %s, got %s", expected, result)
-	}
+	Convey("When ask for a welcome message", t, func() {
+		result := getWelcomeMessage()
+		Convey("It should return one", func() {
+			So(result, ShouldEqual, "Hello world!")
+		})
+	})
 }
