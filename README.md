@@ -2,11 +2,11 @@
 
 > Template for golang projects @okp4.
 
-[![version](https://img.shields.io/github/v/release/okp4/template-g?style=for-the-badge)](https://github.com/okp4/template-go/releases)
-[![build](https://github.com/okp4/template-go/actions/workflows/build.yml/badge.svg?style=for-the-badge)](https://github.com/okp4/template-go/actions/workflows/build.yml)
-[![lint](https://github.com/okp4/template-go/actions/workflows/lint.yml/badge.svg?style=for-the-badge)](https://github.com/okp4/template-go/actions/workflows/lint.yml)
-[![test](https://github.com/okp4/template-go/actions/workflows/test.yml/badge.svg?style=for-the-badge)](https://github.com/okp4/template-go/actions/workflows/test.yml)
-[![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge)](https://conventionalcommits.org)
+[![version](https://img.shields.io/github/v/release/okp4/template-go?style=for-the-badge&logo=github)](https://github.com/okp4/template-go/releases)
+[![lint](https://img.shields.io/github/workflow/status/okp4/template-go/Lint?label=lint&style=for-the-badge&logo=github)](https://github.com/okp4/template-go/actions/workflows/lint.yml)
+[![build](https://img.shields.io/github/workflow/status/okp4/template-go/build?label=build&style=for-the-badge&logo=github)](https://github.com/okp4/template-go/actions/workflows/build.yml)
+[![test](https://img.shields.io/github/workflow/status/okp4/template-go/test?label=test&style=for-the-badge&logo=github)](https://github.com/okp4/template-go/actions/workflows/test.yml)
+[![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge&logo=conventionalcommits)](https://conventionalcommits.org)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Purpose & Philosophy
