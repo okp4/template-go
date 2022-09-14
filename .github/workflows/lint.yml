@@ -73,7 +73,7 @@ jobs:
         uses: golangci/golangci-lint-action@v3
         if: steps.changed-go-files.outputs.any_changed == 'true'
         with:
-          version: v1.45
+          version: v1.49
 
   lint-dockerfile:
     runs-on: ubuntu-20.04
