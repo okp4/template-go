@@ -1,6 +1,6 @@
 module okp4/template-go
 
-go 1.18
+go 1.19
 
 require (
 	github.com/spf13/cobra v1.5.0
