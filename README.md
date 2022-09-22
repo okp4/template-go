@@ -8,6 +8,7 @@
 [![test](https://img.shields.io/github/workflow/status/okp4/template-go/Test?label=test&style=for-the-badge&logo=github)](https://github.com/okp4/template-go/actions/workflows/test.yml)
 [![codecov](https://img.shields.io/codecov/c/github/okp4/template-go?style=for-the-badge&token=6NL9ICGZQS&logo=codecov)](https://codecov.io/gh/okp4/template-go)
 [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge&logo=conventionalcommits)](https://conventionalcommits.org)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg?style=for-the-badge)](https://github.com/okp4/.github/blob/main/CODE_OF_CONDUCT.md)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Purpose & Philosophy
