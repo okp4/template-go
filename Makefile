@@ -4,7 +4,7 @@
 BINARY_NAME             = template-go
 TARGET_FOLDER           = target
 DIST_FOLDER             = $(TARGET_FOLDER)/dist
-DOCKER_IMAGE_GOLANG_CI  = golangci/golangci-lint:v1.49
+DOCKER_IMAGE_GOLANG_CI  = golangci/golangci-lint:v1.55
 
 # Some colors
 COLOR_GREEN  = $(shell tput -Txterm setaf 2)
@@ -46,7 +46,7 @@ lint-go: ## Lint go source code
   		-v `pwd`:/app:ro \
   		-w /app \
   		${DOCKER_IMAGE_GOLANG_CI} \
-  		golangci-lint run -v
+  		golangci-lint run -v ./...
 
 ## Build:
 build: build-go ## Build all available artefacts (executable, docker image, etc.)
