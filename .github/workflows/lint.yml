@@ -67,13 +67,13 @@ jobs:
         uses: actions/setup-go@v4.0.1
         if: steps.changed-go-files.outputs.any_changed == 'true'
         with:
-          go-version: "1.19"
+          go-version: "1.21"
 
       - name: Lint go code (golangci-lint)
         uses: golangci/golangci-lint-action@v3
         if: steps.changed-go-files.outputs.any_changed == 'true'
         with:
-          version: v1.49
+          version: v1.55
 
   lint-dockerfile:
     runs-on: ubuntu-22.04
