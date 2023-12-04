@@ -3,16 +3,13 @@ run:
 linters:
   disable-all: true
   enable:
-    - deadcode
     - errcheck
     - gosimple
     - govet
     - ineffassign
     - staticcheck
-    - structcheck
     - typecheck
     - unused
-    - varcheck
     - asciicheck
     - bidichk
     - bodyclose
@@ -91,12 +88,11 @@ issues:
     - path: "_test\\.go"
       linters:
         - bodyclose
-        - deadcode
+        - revive
         - dupl
         - funlen
         - goconst
         - noctx
         - unused
-        - varcheck
         - wrapcheck
         - lll
